@@ -1,5 +1,5 @@
 import styled, {ThemeProvider} from "styled-components"
-import {GlobalStyles, MyRoutes, Sidebar, useThemeStore} from "./index"
+import {AuthContextProvider, GlobalStyles, MyRoutes, Sidebar, useThemeStore} from "./index"
 import {Device} from "./styles/breakpoints"
 import { useState } from "react";
 
@@ -8,12 +8,15 @@ function App() {
   const {themeStyle} = useThemeStore();
   return (
     <ThemeProvider theme={themeStyle}>
-      <Container className={sidebarOpen ? "active":""}>
-            <GlobalStyles/>
-            <section className="contentSidebar"><Sidebar state={sidebarOpen} setState={()=>setSidebarOpen(!sidebarOpen)}/></section>
-            <section className="contentMenuAmbur">menu ambur</section>
-            <section className="contentRouters"><MyRoutes /></section>
-      </Container>
+      <AuthContextProvider>
+        <Container className={sidebarOpen ? "active":""}>
+              <GlobalStyles/>
+              <section className="contentSidebar"><Sidebar state={sidebarOpen} setState={()=>setSidebarOpen(!sidebarOpen)}/></section>
+              <section className="contentMenuAmbur">menu ambur</section>
+              <section className="contentRouters"><MyRoutes /></section>
+        </Container>
+      </AuthContextProvider>
+      
     </ThemeProvider>
     
   )

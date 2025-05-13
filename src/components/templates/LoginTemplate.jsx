@@ -1,14 +1,15 @@
 import styled from "styled-components";
 // eslint-disable-next-line no-unused-vars
-import { Btnsave, InputText2, Linea, Title ,v} from "../../index";
+import { Btnsave, Footer, InputText2, Linea, Title ,useAuthStore,v} from "../../index";
 import {Device} from "../../styles/breakpoints"
 
 
 export function LoginTemplate() {
+    const {loginGoogle} = useAuthStore();
     return(
         <Container>
                 <div className="card">
-                    <Title $paddingbottom="20px">Ingresar</Title>
+                    <Title $paddingbottom="40px">Ingresar</Title>
                     <form>
                         <InputText2>
                             <input className="form__field" placeholder="email" type="text"/>
@@ -25,8 +26,9 @@ export function LoginTemplate() {
                     <Linea>
                         <span>o</span>
                     </Linea>
-                    <Btnsave titulo={"Google"}  bgcolor="#fff" icono={<v.iconogoogle />} />
+                    <Btnsave funcion={loginGoogle} titulo={"Google"}  bgcolor="#fff" icono={<v.iconogoogle />} />
                 </div>
+                <Footer />
         </Container>
 );
 }
@@ -36,7 +38,8 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
-    
+    flex-direction: column;
+
     .card{
         display: flex;
         flex-direction: column;
