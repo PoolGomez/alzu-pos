@@ -1,11 +1,11 @@
 import styled from "styled-components";
-// eslint-disable-next-line no-unused-vars
 import { Btnsave, Footer, InputText2, Linea, Title ,useAuthStore,v} from "../../index";
 import {Device} from "../../styles/breakpoints"
 
 
 export function LoginTemplate() {
     const {loginGoogle} = useAuthStore();
+    
     return(
         <Container>
                 <div className="card">
@@ -31,6 +31,7 @@ export function LoginTemplate() {
                         <span>o</span>
                     </Linea>
                     <Btnsave funcion={loginGoogle} titulo={"Google"}  bgcolor="#fff" icono={<v.iconogoogle />} />
+                    
                 </div>
                 <Footer />
         </Container>
@@ -72,3 +73,4 @@ const ContentLogo = styled.section`
         width: 10%;
     }
 `
+

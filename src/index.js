@@ -16,10 +16,18 @@ export * from './pages/Home';
 export * from './pages/Login';
 export * from './routers/routes';
 export * from './store/AuthStore';
+export * from './store/EmpresaStore';
 export * from './store/ThemeStore';
 export * from './styles/GlobalStyles';
 export * from './styles/breakpoints';
 export * from './styles/themes';
 export * from './styles/variables';
+export * from './supabase/crudCategorias';
+export * from './supabase/crudEmpresa';
+export * from './supabase/crudRol';
+export * from './supabase/crudTipoDocumento';
+export * from './supabase/crudUsuarios';
 export * from './supabase/supabase.config';
 export * from './utils/dataEstatica';
+
+// 4:57
